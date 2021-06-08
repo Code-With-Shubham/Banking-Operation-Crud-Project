@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>NewAccount</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<br>
+<h2>New Account Registration </h2>
+<br>
+<hr><br>
+<div class="container">
+	<form name="frm" method="post" action="NewAcc">
+		<table>
+			<tr>
+				<td>Account Number</td>
+				<td><input type="text" name="accno" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Account Name</td>
+				<td><input type="text" name="accnm" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Account Type</td>
+				<td><select name="typ" >
+					<option value="Current">Current</option>
+					<option value="Saving">Saving</option>
+					<option value="Fixed">Fixed</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Balance</td>
+				<td><input type="text" name="bal" class="form-control"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Submit" class="form-control"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Account</title>
+<link rel="stylesheet" href="bootstrap.min.css">
+<script language="Javascript" type="text/javascript">
+            
+            
+            function createRequestObject() {
+                var tmpXmlHttpObject;
+                if (window.XMLHttpRequest) {
+                        tmpXmlHttpObject = new XMLHttpRequest();
+                } else if (window.ActiveXObject) {
+                    tmpXmlHttpObject = new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            
+                return tmpXmlHttpObject;
+            }
+            
+            
+            var http = createRequestObject();
+            
+            function makeGetRequest() {
+                no=document.frm.ano.value;
+                http.open('get', 'SearchNumber.jsp?ano=' + no);
+                http.onreadystatechange = processResponse;
+                http.send(null);
+            }
+            
+            function processResponse() {
+                if(http.readyState == 4){
+                    var response = http.responseText;
+                    document.getElementById('result').innerHTML = response;
+                }
+            }
+            
+            </script>
+</head>
+<body>
+	<div class="container">
+		<h2>AJAX: Search Account Information</h2>
+		<hr>
+			<form name="frm">
+				Account Number <input type="text" name="ano" required >
+				<input type="button" value="Search" onclick="makeGetRequest()">
+			</form>
+			<br><br>
+			<div id="result">
+				<img alt="Image is not available in the source" src="images/linked.gif">
+			</div>
+			<br><hr>
+	</div>
+</body>
+</html>
